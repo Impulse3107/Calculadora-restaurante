@@ -3,51 +3,939 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CALCULADORA BRESLYN</title>
+    <title>RESTAURANTE BRESLYN</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <div class="header">
         <img src="images/logo.png" alt="Logo del Restaurante" class="logo">
-        <h1>CALCULADORA BRESLYN</h1>
+        <h1>RESTAURANTE BRESLYN</h1>
     </div>
     <div class="container">
-        <div id="menu">
-            <h2>Menú</h2>
-            <ul>
-                <li>
-                    <img src="images/Chaufa de pollo.png" alt="Plato 1" class="menu-img">
-                    <span>Chaufa de pollo - S/. 8.00</span>
-                    <button onclick="addPlato('Chaufa de pollo', 8.00)">Agregar</button>
-                </li>
-                <li>
-                    <img src="images/Lomo Montado.png" alt="Plato 2" class="menu-img">
-                    <span>Lomo Montado - S/. 10.00</span>
-                    <button onclick="addPlato('Lomo Montado', 10.00)">Agregar</button>
-                </li>
-                <li>
-                    <img src="images/Pollo Broaster.png" alt="Plato 3" class="menu-img">
-                    <span>Pollo Broaster - S/. 8.00</span>
-                    <button onclick="addPlato('Pollo Broaster', 8.00)">Agregar</button>
-                </li>
-                <li>
-                    <img src="images/chicharron de pollo.png" alt="Chicharron de Pollo" class="menu-img">
-                    <span>Chicharron de Pollo - S/. 10.00</span>
-                    <button onclick="addPlato('Chicharron de Pollo', 10.00)">Agregar</button>
-                </li>
-                <li>
-                    <img src="images/Lomo Saltado.jpg" alt="Lomo Saltado" class="menu-img">
-                    <span>Lomo Saltado - S/. 10.00</span>
-                    <button onclick="addPlato('Lomo Saltado', 10.00)">Agregar</button>
-                </li>
-            </ul>
+        <div class="tables">
+            <div class="table" onclick="openTable('table1')">Mesa 1</div>
+            <div class="table" onclick="openTable('table2')">Mesa 2</div>
+            <div class="table" onclick="openTable('table3')">Mesa 3</div>
+            <div class="table" onclick="openTable('table4')">Mesa 4</div>
+            <div class="table" onclick="openTable('table5')">Mesa 5</div>
+            <div class="table" onclick="openTable('table6')">Mesa 6</div>
         </div>
-        <div id="pedido">
-            <h2>Pedido Actual</h2>
-            <ul id="pedido-list"></ul>
-            <p>Total: S/<span id="total">0.00</span></p>
-        </div>      
+
+        <!-- Contenido de la Mesa 1 -->
+        <div id="table1" class="table-content">
+            <div class="tabs">
+                <button class="tab-button active" onclick="openTab('menu', 'table1')">Menú</button>
+                <button class="tab-button" onclick="openTab('bebidas', 'table1')">Bebidas</button>
+                <button class="tab-button" onclick="openTab('jugos', 'table1')">Jugos</button>
+            </div>
+            <div id="menu" class="tab-content active">
+                <h2>Menú</h2>
+                <ul>
+                    <li>
+                        <img src="images/lomo saltado.jpg" alt="lomo saltado" class="menu-img">
+                        <span>Lomo Saltado - S/8.00</span>
+                        <button onclick="addItem('table1', 'lomo saltado', 8.00)">Agregar</button>
+                    </li>
+                    <li>
+                        <img src="images/chaufa de pollo.png" alt="chaufa de pollo" class="menu-img">
+                        <span>Chaufa de Pollo - S/8.00</span>
+                        <button onclick="addItem('table1', 'chaufa de pollo', 8.00)">Agregar</button>
+                    </li>
+                    <li>
+                        <img src="images/chicharron de pollo.png" alt="chicharron de pollo" class="menu-img">
+                        <span>Chicharron de Pollo - S/10.00</span>
+                        <button onclick="addItem('table1', 'chicharron de pollo', 10.00)">Agregar</button>
+                    </li>
+                    <li>
+                        <img src="images/pollo broster.png" alt="pollo broster" class="menu-img">
+                        <span>Pollo Broster - S/8.00</span>
+                        <button onclick="addItem('table1', 'pollo broster', 8.00)">Agregar</button>
+                    </li>
+                    <li>
+                        <img src="images/alitas broster.png" alt="alitas broster" class="menu-img">
+                        <span>Alitas Broster - S/8.00</span>
+                        <button onclick="addItem('table1', 'alitas broster', 8.00)">Agregar</button>
+                    </li>
+                    <li>
+                        <img src="images/arroz a la cubana.png" alt="arroz a la cubana" class="menu-img">
+                        <span>Arroz a la Cubana - S/7.00</span>
+                        <button onclick="addItem('table1', 'arroz a la cubana', 7.00)">Agregar</button>
+                    </li>
+                    <li>
+                        <img src="images/pollo a la plancha.png" alt="pollo a la plancha" class="menu-img">
+                        <span>Pollo a la Plancha - S/12.00</span>
+                        <button onclick="addItem('table1', 'pollo a la plancha', 12.00)">Agregar</button>
+                    </li>
+                    <li>
+                        <img src="images/salchipapa.png" alt="salchipapa" class="menu-img">
+                        <span>Salchipapa - S/5.00</span>
+                        <button onclick="addItem('table1', 'salchipapa', 5.00)">Agregar</button>
+                    </li>
+                    <li>
+                        <img src="images/lomo montado.png" alt="lomo montado" class="menu-img">
+                        <span>Lomo Montado - S/12.00</span>
+                        <button onclick="addItem('table1', 'lomo montado', 12.00)">Agregar</button>
+                    </li>
+                    <li>
+                        <img src="images/tallarin saltado.png" alt="tallarin saltado" class="menu-img">
+                        <span>Tallarin Saltado - S/12.00</span>
+                        <button onclick="addItem('table1', 'tallarin saltado', 12.00)">Agregar</button>
+                    </li>
+                </ul>
+            </div>
+            <div id="bebidas" class="tab-content">
+                <h2>Bebidas</h2>
+                <ul>
+                    <li>
+                        <img src="images/Gordita.jpg" alt="Gordita" class="menu-img">
+                        <span>Gordita - S/5.00</span>
+                        <button onclick="addItem('table1', 'Gordita', 5.00)">Agregar</button>
+                    </li>
+                    <li>
+                        <img src="images/Coca Cola.png" alt="Coca Cola" class="menu-img">
+                        <span>Coca Cola - S/3.00</span>
+                        <button onclick="addItem('table1', 'Coca Cola', 3.00)">Agregar</button>
+                    </li>
+                    <li>
+                        <img src="images/Inca Kola.png" alt="Inca Kola" class="menu-img">
+                        <span>Inca Kola - S/3.00</span>
+                        <button onclick="addItem('table1', 'Inca Kola', 3.00)">Agregar</button>
+                    </li>
+                    <li>
+                        <img src="images/San Luis.png" alt="San Luis" class="menu-img">
+                        <span>San Luis - S/3.00</span>
+                        <button onclick="addItem('table1', 'San Luis', 3.00)">Agregar</button>
+                    </li>
+                    <!-- Agregar más bebidas -->
+                </ul>
+            </div>
+            <div id="jugos" class="tab-content">
+                <h2>Jugos</h2>
+                <ul>
+                    <li>
+                        <img src="images/FRESA.png" alt="FRESA" class="menu-img">
+                        <span>Fresa - S/4.00</span>
+                        <button onclick="addItem('table1', 'FRESA', 4.00)">Agregar</button>
+                    </li>
+                    <li>
+                        <img src="images/NARANJA.png" alt="NARANJA" class="menu-img">
+                        <span>Naranja - S/4.00</span>
+                        <button onclick="addItem('table1', 'NARANJA', 4.00)">Agregar</button>
+                    </li>
+                    <li>
+                        <img src="images/PIÑA.png" alt="PIÑA" class="menu-img">
+                        <span>Piña - S/4.00</span>
+                        <button onclick="addItem('table1', 'PIÑA', 4.00)">Agregar</button>
+                    </li>
+                    <li>
+                        <img src="images/PAPAYA.png" alt="PAPAYA" class="menu-img">
+                        <span>Papaya - S/4.00</span>
+                        <button onclick="addItem('table1', 'PAPAYA', 4.00)">Agregar</button>
+                    </li>
+                    <li>
+                        <img src="images/PLATANO.png" alt="PLATANO" class="menu-img">
+                        <span>Platano - S/4.00</span>
+                        <button onclick="addItem('table1', 'PLATANO', 4.00)">Agregar</button>
+                    </li>
+                    <li>
+                        <img src="images/SURTIDO 2.png" alt="SURTIDO 2" class="menu-img">
+                        <span>Surtido - S/6.00</span>
+                        <button onclick="addItem('table1', 'SURTIDO 2', 6.00)">Agregar</button>
+                    </li>
+                    <li>
+                        <img src="images/LUCUMA.png" alt="LUCUMA" class="menu-img">
+                        <span>Lucuma - S/6.00</span>
+                        <button onclick="addItem('table1', 'LUCUMA', 6.00)">Agregar</button>
+                    </li>
+                    <li>
+                        <img src="images/MANGO.png" alt="MANGO" class="menu-img">
+                        <span>Mango - S/6.00</span>
+                        <button onclick="addItem('table1', 'MANGO', 6.00)">Agregar</button>
+                    </li>
+                    <li>
+                        <img src="images/COMBINADO.png" alt="COMBINADO" class="menu-img">
+                        <span>Combinado - S/5.00</span>
+                        <button onclick="addItem('table1', 'COMBINADO', 5.00)">Agregar</button>
+                    </li>
+                    <li>
+                        <img src="images/CON LECHE.png" alt="CON LECHE" class="menu-img">
+                        <span>Con Leche - S/6.00</span>
+                        <button onclick="addItem('table1', 'CON LECHE', 6.00)">Agregar</button>
+                    </li>
+                    <!-- Agregar más jugos -->
+                </ul>
+            </div>
+            <div id="pedido-table1" class="pedido">
+                <h2>Pedido Actual</h2>
+                <ul id="pedido-list-table1"></ul>
+                <p>Total: S/<span id="total-table1">0.00</span></p>
+                <button onclick="clearOrder('table1')">Limpiar</button>
+            </div>
+        </div>
+
+        <!-- Repetir para las otras mesas (table2, table3, ...) -->
+        <!-- Asegúrate de que cada mesa tenga un contenido similar -->
+        <!-- Ejemplo para table2 -->
+<!----------------------------------------------------------------------------------------------------->        
+        <div id="table2" class="table-content">
+            <div class="tabs">
+                <button class="tab-button active" onclick="openTab('menu', 'table2')">Menú</button>
+                <button class="tab-button" onclick="openTab('bebidas', 'table2')">Bebidas</button>
+                <button class="tab-button" onclick="openTab('jugos', 'table2')">Jugos</button>
+            </div>
+            <div id="menu" class="tab-content active">
+                <h2>Menú</h2>
+                <ul>
+                    <li>
+                        <img src="images/lomo saltado.jpg" alt="lomo saltado" class="menu-img">
+                        <span>Lomo Saltado - S/8.00</span>
+                        <button onclick="addItem('table2', 'lomo saltado', 8.00)">Agregar</button>
+                    </li>
+                    <li>
+                        <img src="images/chaufa de pollo.png" alt="chaufa de pollo" class="menu-img">
+                        <span>Chaufa de Pollo - S/8.00</span>
+                        <button onclick="addItem('table2', 'chaufa de pollo', 8.00)">Agregar</button>
+                    </li>
+                    <li>
+                        <img src="images/chicharron de pollo.png" alt="chicharron de pollo" class="menu-img">
+                        <span>Chicharron de Pollo - S/10.00</span>
+                        <button onclick="addItem('table2', 'chicharron de pollo', 10.00)">Agregar</button>
+                    </li>
+                    <li>
+                        <img src="images/pollo broster.png" alt="pollo broster" class="menu-img">
+                        <span>Pollo Broster - S/8.00</span>
+                        <button onclick="addItem('table2', 'pollo broster', 8.00)">Agregar</button>
+                    </li>
+                    <li>
+                        <img src="images/alitas broster.png" alt="alitas broster" class="menu-img">
+                        <span>Alitas Broster - S/8.00</span>
+                        <button onclick="addItem('table2', 'alitas broster', 8.00)">Agregar</button>
+                    </li>
+                    <li>
+                        <img src="images/arroz a la cubana.png" alt="arroz a la cubana" class="menu-img">
+                        <span>Arroz a la Cubana - S/7.00</span>
+                        <button onclick="addItem('table2', 'arroz a la cubana', 7.00)">Agregar</button>
+                    </li>
+                    <li>
+                        <img src="images/pollo a la plancha.png" alt="pollo a la plancha" class="menu-img">
+                        <span>Pollo a la Plancha - S/12.00</span>
+                        <button onclick="addItem('table2', 'pollo a la plancha', 12.00)">Agregar</button>
+                    </li>
+                    <li>
+                        <img src="images/salchipapa.png" alt="salchipapa" class="menu-img">
+                        <span>Salchipapa - S/5.00</span>
+                        <button onclick="addItem('table2', 'salchipapa', 5.00)">Agregar</button>
+                    </li>
+                    <li>
+                        <img src="images/lomo montado.png" alt="lomo montado" class="menu-img">
+                        <span>Lomo Montado - S/12.00</span>
+                        <button onclick="addItem('table2', 'lomo montado', 12.00)">Agregar</button>
+                    </li>
+                    <li>
+                        <img src="images/tallarin saltado.png" alt="tallarin saltado" class="menu-img">
+                        <span>Tallarin Saltado - S/12.00</span>
+                        <button onclick="addItem('table2', 'tallarin saltado', 12.00)">Agregar</button>
+                    </li>
+                </ul>
+            </div>
+            <div id="bebidas" class="tab-content">
+                <h2>Bebidas</h2>
+                <ul>
+                    <li>
+                        <img src="images/Gordita.jpg" alt="Gordita" class="menu-img">
+                        <span>Gordita - S/5.00</span>
+                        <button onclick="addItem('table2', 'Gordita', 5.00)">Agregar</button>
+                    </li>
+                    <li>
+                        <img src="images/Coca Cola.png" alt="Coca Cola" class="menu-img">
+                        <span>Coca Cola - S/3.00</span>
+                        <button onclick="addItem('table2', 'Coca Cola', 3.00)">Agregar</button>
+                    </li>
+                    <li>
+                        <img src="images/Inca Kola.png" alt="Inca Kola" class="menu-img">
+                        <span>Inca Kola - S/3.00</span>
+                        <button onclick="addItem('table2', 'Inca Kola', 3.00)">Agregar</button>
+                    </li>
+                    <li>
+                        <img src="images/San Luis.png" alt="San Luis" class="menu-img">
+                        <span>San Luis - S/3.00</span>
+                        <button onclick="addItem('table2', 'San Luis', 3.00)">Agregar</button>
+                    </li>
+                    <!-- Agregar más bebidas -->
+                </ul>
+            </div>
+            <div id="jugos" class="tab-content">
+                <h2>Jugos</h2>
+                <ul>
+                    <li>
+                        <img src="images/FRESA.png" alt="FRESA" class="menu-img">
+                        <span>Fresa - S/4.00</span>
+                        <button onclick="addItem('table2', 'FRESA', 4.00)">Agregar</button>
+                    </li>
+                    <li>
+                        <img src="images/NARANJA.png" alt="NARANJA" class="menu-img">
+                        <span>Naranja - S/4.00</span>
+                        <button onclick="addItem('table2', 'NARANJA', 4.00)">Agregar</button>
+                    </li>
+                    <li>
+                        <img src="images/PIÑA.png" alt="PIÑA" class="menu-img">
+                        <span>Piña - S/4.00</span>
+                        <button onclick="addItem('table2', 'PIÑA', 4.00)">Agregar</button>
+                    </li>
+                    <li>
+                        <img src="images/PAPAYA.png" alt="PAPAYA" class="menu-img">
+                        <span>Papaya - S/4.00</span>
+                        <button onclick="addItem('table2', 'PAPAYA', 4.00)">Agregar</button>
+                    </li>
+                    <li>
+                        <img src="images/PLATANO.png" alt="PLATANO" class="menu-img">
+                        <span>Platano - S/4.00</span>
+                        <button onclick="addItem('table2', 'PLATANO', 4.00)">Agregar</button>
+                    </li>
+                    <li>
+                        <img src="images/SURTIDO 2.png" alt="SURTIDO 2" class="menu-img">
+                        <span>Surtido - S/6.00</span>
+                        <button onclick="addItem('table2', 'SURTIDO 2', 6.00)">Agregar</button>
+                    </li>
+                    <li>
+                        <img src="images/LUCUMA.png" alt="LUCUMA" class="menu-img">
+                        <span>Lucuma - S/6.00</span>
+                        <button onclick="addItem('table2', 'LUCUMA', 6.00)">Agregar</button>
+                    </li>
+                    <li>
+                        <img src="images/MANGO.png" alt="MANGO" class="menu-img">
+                        <span>Mango - S/6.00</span>
+                        <button onclick="addItem('table2', 'MANGO', 6.00)">Agregar</button>
+                    </li>
+                    <li>
+                        <img src="images/COMBINADO.png" alt="COMBINADO" class="menu-img">
+                        <span>Combinado - S/5.00</span>
+                        <button onclick="addItem('table2', 'COMBINADO', 5.00)">Agregar</button>
+                    </li>
+                    <li>
+                        <img src="images/CON LECHE.png" alt="CON LECHE" class="menu-img">
+                        <span>Con Leche - S/6.00</span>
+                        <button onclick="addItem('table2', 'CON LECHE', 6.00)">Agregar</button>
+                    </li>
+                    <!-- Agregar más jugos -->
+                </ul>
+            </div>
+            <div id="pedido-table2" class="pedido">
+                <h2>Pedido Actual</h2>
+                <ul id="pedido-list-table2"></ul>
+                <p>Total: S/<span id="total-table2">0.00</span></p>
+                <button onclick="clearOrder('table2')">Limpiar</button>
+            </div>
+        </div>
+
+<!----------------------------------------------------------------------------------------------------->      
+<div id="table3" class="table-content">
+    <div class="tabs">
+        <button class="tab-button active" onclick="openTab('menu', 'table3')">Menú</button>
+        <button class="tab-button" onclick="openTab('bebidas', 'table3')">Bebidas</button>
+        <button class="tab-button" onclick="openTab('jugos', 'table3')">Jugos</button>
     </div>
+    <div id="menu" class="tab-content active">
+        <h2>Menú</h2>
+        <ul>
+            <li>
+                <img src="images/lomo saltado.jpg" alt="lomo saltado" class="menu-img">
+                <span>Lomo Saltado - S/8.00</span>
+                <button onclick="addItem('table3', 'lomo saltado', 8.00)">Agregar</button>
+            </li>
+            <li>
+                <img src="images/chaufa de pollo.png" alt="chaufa de pollo" class="menu-img">
+                <span>Chaufa de Pollo - S/8.00</span>
+                <button onclick="addItem('table3', 'chaufa de pollo', 8.00)">Agregar</button>
+            </li>
+            <li>
+                <img src="images/chicharron de pollo.png" alt="chicharron de pollo" class="menu-img">
+                <span>Chicharron de Pollo - S/10.00</span>
+                <button onclick="addItem('table3', 'chicharron de pollo', 10.00)">Agregar</button>
+            </li>
+            <li>
+                <img src="images/pollo broster.png" alt="pollo broster" class="menu-img">
+                <span>Pollo Broster - S/8.00</span>
+                <button onclick="addItem('table3', 'pollo broster', 8.00)">Agregar</button>
+            </li>
+            <li>
+                <img src="images/alitas broster.png" alt="alitas broster" class="menu-img">
+                <span>Alitas Broster - S/8.00</span>
+                <button onclick="addItem('table3', 'alitas broster', 8.00)">Agregar</button>
+            </li>
+            <li>
+                <img src="images/arroz a la cubana.png" alt="arroz a la cubana" class="menu-img">
+                <span>Arroz a la Cubana - S/7.00</span>
+                <button onclick="addItem('table3', 'arroz a la cubana', 7.00)">Agregar</button>
+            </li>
+            <li>
+                <img src="images/pollo a la plancha.png" alt="pollo a la plancha" class="menu-img">
+                <span>Pollo a la Plancha - S/12.00</span>
+                <button onclick="addItem('table3', 'pollo a la plancha', 12.00)">Agregar</button>
+            </li>
+            <li>
+                <img src="images/salchipapa.png" alt="salchipapa" class="menu-img">
+                <span>Salchipapa - S/5.00</span>
+                <button onclick="addItem('table3', 'salchipapa', 5.00)">Agregar</button>
+            </li>
+            <li>
+                <img src="images/lomo montado.png" alt="lomo montado" class="menu-img">
+                <span>Lomo Montado - S/12.00</span>
+                <button onclick="addItem('table3', 'lomo montado', 12.00)">Agregar</button>
+            </li>
+            <li>
+                <img src="images/tallarin saltado.png" alt="tallarin saltado" class="menu-img">
+                <span>Tallarin Saltado - S/12.00</span>
+                <button onclick="addItem('table3', 'tallarin saltado', 12.00)">Agregar</button>
+            </li>
+        </ul>
+    </div>
+    <div id="bebidas" class="tab-content">
+        <h2>Bebidas</h2>
+        <ul>
+            <li>
+                <img src="images/Gordita.jpg" alt="Gordita" class="menu-img">
+                <span>Gordita - S/5.00</span>
+                <button onclick="addItem('table3', 'Gordita', 5.00)">Agregar</button>
+            </li>
+            <li>
+                <img src="images/Coca Cola.png" alt="Coca Cola" class="menu-img">
+                <span>Coca Cola - S/3.00</span>
+                <button onclick="addItem('table3', 'Coca Cola', 3.00)">Agregar</button>
+            </li>
+            <li>
+                <img src="images/Inca Kola.png" alt="Inca Kola" class="menu-img">
+                <span>Inca Kola - S/3.00</span>
+                <button onclick="addItem('table3', 'Inca Kola', 3.00)">Agregar</button>
+            </li>
+            <li>
+                <img src="images/San Luis.png" alt="San Luis" class="menu-img">
+                <span>San Luis - S/3.00</span>
+                <button onclick="addItem('table3', 'San Luis', 3.00)">Agregar</button>
+            </li>
+            <!-- Agregar más bebidas -->
+        </ul>
+    </div>
+    <div id="jugos" class="tab-content">
+        <h2>Jugos</h2>
+        <ul>
+            <li>
+                <img src="images/FRESA.png" alt="FRESA" class="menu-img">
+                <span>Fresa - S/4.00</span>
+                <button onclick="addItem('table3', 'FRESA', 4.00)">Agregar</button>
+            </li>
+            <li>
+                <img src="images/NARANJA.png" alt="NARANJA" class="menu-img">
+                <span>Naranja - S/4.00</span>
+                <button onclick="addItem('table3', 'NARANJA', 4.00)">Agregar</button>
+            </li>
+            <li>
+                <img src="images/PIÑA.png" alt="PIÑA" class="menu-img">
+                <span>Piña - S/4.00</span>
+                <button onclick="addItem('table3', 'PIÑA', 4.00)">Agregar</button>
+            </li>
+            <li>
+                <img src="images/PAPAYA.png" alt="PAPAYA" class="menu-img">
+                <span>Papaya - S/4.00</span>
+                <button onclick="addItem('table3', 'PAPAYA', 4.00)">Agregar</button>
+            </li>
+            <li>
+                <img src="images/PLATANO.png" alt="PLATANO" class="menu-img">
+                <span>Platano - S/4.00</span>
+                <button onclick="addItem('table3', 'PLATANO', 4.00)">Agregar</button>
+            </li>
+            <li>
+                <img src="images/SURTIDO 2.png" alt="SURTIDO 2" class="menu-img">
+                <span>Surtido - S/6.00</span>
+                <button onclick="addItem('table3', 'SURTIDO 2', 6.00)">Agregar</button>
+            </li>
+            <li>
+                <img src="images/LUCUMA.png" alt="LUCUMA" class="menu-img">
+                <span>Lucuma - S/6.00</span>
+                <button onclick="addItem('table3', 'LUCUMA', 6.00)">Agregar</button>
+            </li>
+            <li>
+                <img src="images/MANGO.png" alt="MANGO" class="menu-img">
+                <span>Mango - S/6.00</span>
+                <button onclick="addItem('table3', 'MANGO', 6.00)">Agregar</button>
+            </li>
+            <li>
+                <img src="images/COMBINADO.png" alt="COMBINADO" class="menu-img">
+                <span>Combinado - S/5.00</span>
+                <button onclick="addItem('table3', 'COMBINADO', 5.00)">Agregar</button>
+            </li>
+            <li>
+                <img src="images/CON LECHE.png" alt="CON LECHE" class="menu-img">
+                <span>Con Leche - S/6.00</span>
+                <button onclick="addItem('table3', 'CON LECHE', 6.00)">Agregar</button>
+            </li>
+            <!-- Agregar más jugos -->
+        </ul>
+    </div>
+    <div id="pedido-table3" class="pedido">
+        <h2>Pedido Actual</h2>
+        <ul id="pedido-list-table3"></ul>
+        <p>Total: S/<span id="total-table3">0.00</span></p>
+        <button onclick="clearOrder('table3')">Limpiar</button>
+    </div>
+</div>
+<!----------------------------------------------------------------------------------------------------->
+<div id="table4" class="table-content">
+    <div class="tabs">
+        <button class="tab-button active" onclick="openTab('menu', 'table4')">Menú</button>
+        <button class="tab-button" onclick="openTab('bebidas', 'table4')">Bebidas</button>
+        <button class="tab-button" onclick="openTab('jugos', 'table4')">Jugos</button>
+    </div>
+    <div id="menu" class="tab-content active">
+        <h2>Menú</h2>
+        <ul>
+            <li>
+                <img src="images/lomo saltado.jpg" alt="lomo saltado" class="menu-img">
+                <span>Lomo Saltado - S/8.00</span>
+                <button onclick="addItem('table4', 'lomo saltado', 8.00)">Agregar</button>
+            </li>
+            <li>
+                <img src="images/chaufa de pollo.png" alt="chaufa de pollo" class="menu-img">
+                <span>Chaufa de Pollo - S/8.00</span>
+                <button onclick="addItem('table4', 'chaufa de pollo', 8.00)">Agregar</button>
+            </li>
+            <li>
+                <img src="images/chicharron de pollo.png" alt="chicharron de pollo" class="menu-img">
+                <span>Chicharron de Pollo - S/10.00</span>
+                <button onclick="addItem('table4', 'chicharron de pollo', 10.00)">Agregar</button>
+            </li>
+            <li>
+                <img src="images/pollo broster.png" alt="pollo broster" class="menu-img">
+                <span>Pollo Broster - S/8.00</span>
+                <button onclick="addItem('table4', 'pollo broster', 8.00)">Agregar</button>
+            </li>
+            <li>
+                <img src="images/alitas broster.png" alt="alitas broster" class="menu-img">
+                <span>Alitas Broster - S/8.00</span>
+                <button onclick="addItem('table4', 'alitas broster', 8.00)">Agregar</button>
+            </li>
+            <li>
+                <img src="images/arroz a la cubana.png" alt="arroz a la cubana" class="menu-img">
+                <span>Arroz a la Cubana - S/7.00</span>
+                <button onclick="addItem('table4', 'arroz a la cubana', 7.00)">Agregar</button>
+            </li>
+            <li>
+                <img src="images/pollo a la plancha.png" alt="pollo a la plancha" class="menu-img">
+                <span>Pollo a la Plancha - S/12.00</span>
+                <button onclick="addItem('table4', 'pollo a la plancha', 12.00)">Agregar</button>
+            </li>
+            <li>
+                <img src="images/salchipapa.png" alt="salchipapa" class="menu-img">
+                <span>Salchipapa - S/5.00</span>
+                <button onclick="addItem('table4', 'salchipapa', 5.00)">Agregar</button>
+            </li>
+            <li>
+                <img src="images/lomo montado.png" alt="lomo montado" class="menu-img">
+                <span>Lomo Montado - S/12.00</span>
+                <button onclick="addItem('table4', 'lomo montado', 12.00)">Agregar</button>
+            </li>
+            <li>
+                <img src="images/tallarin saltado.png" alt="tallarin saltado" class="menu-img">
+                <span>Tallarin Saltado - S/12.00</span>
+                <button onclick="addItem('table4', 'tallarin saltado', 12.00)">Agregar</button>
+            </li>
+        </ul>
+    </div>
+    <div id="bebidas" class="tab-content">
+        <h2>Bebidas</h2>
+        <ul>
+            <li>
+                <img src="images/Gordita.jpg" alt="Gordita" class="menu-img">
+                <span>Gordita - S/5.00</span>
+                <button onclick="addItem('table4', 'Gordita', 5.00)">Agregar</button>
+            </li>
+            <li>
+                <img src="images/Coca Cola.png" alt="Coca Cola" class="menu-img">
+                <span>Coca Cola - S/3.00</span>
+                <button onclick="addItem('table4', 'Coca Cola', 3.00)">Agregar</button>
+            </li>
+            <li>
+                <img src="images/Inca Kola.png" alt="Inca Kola" class="menu-img">
+                <span>Inca Kola - S/3.00</span>
+                <button onclick="addItem('table4', 'Inca Kola', 3.00)">Agregar</button>
+            </li>
+            <li>
+                <img src="images/San Luis.png" alt="San Luis" class="menu-img">
+                <span>San Luis - S/3.00</span>
+                <button onclick="addItem('table4', 'San Luis', 3.00)">Agregar</button>
+            </li>
+            <!-- Agregar más bebidas -->
+        </ul>
+    </div>
+    <div id="jugos" class="tab-content">
+        <h2>Jugos</h2>
+        <ul>
+            <li>
+                <img src="images/FRESA.png" alt="FRESA" class="menu-img">
+                <span>Fresa - S/4.00</span>
+                <button onclick="addItem('table4', 'FRESA', 4.00)">Agregar</button>
+            </li>
+            <li>
+                <img src="images/NARANJA.png" alt="NARANJA" class="menu-img">
+                <span>Naranja - S/4.00</span>
+                <button onclick="addItem('table4', 'NARANJA', 4.00)">Agregar</button>
+            </li>
+            <li>
+                <img src="images/PIÑA.png" alt="PIÑA" class="menu-img">
+                <span>Piña - S/4.00</span>
+                <button onclick="addItem('table4', 'PIÑA', 4.00)">Agregar</button>
+            </li>
+            <li>
+                <img src="images/PAPAYA.png" alt="PAPAYA" class="menu-img">
+                <span>Papaya - S/4.00</span>
+                <button onclick="addItem('table4', 'PAPAYA', 4.00)">Agregar</button>
+            </li>
+            <li>
+                <img src="images/PLATANO.png" alt="PLATANO" class="menu-img">
+                <span>Platano - S/4.00</span>
+                <button onclick="addItem('table4', 'PLATANO', 4.00)">Agregar</button>
+            </li>
+            <li>
+                <img src="images/SURTIDO 2.png" alt="SURTIDO 2" class="menu-img">
+                <span>Surtido - S/6.00</span>
+                <button onclick="addItem('table4', 'SURTIDO 2', 6.00)">Agregar</button>
+            </li>
+            <li>
+                <img src="images/LUCUMA.png" alt="LUCUMA" class="menu-img">
+                <span>Lucuma - S/6.00</span>
+                <button onclick="addItem('table4', 'LUCUMA', 6.00)">Agregar</button>
+            </li>
+            <li>
+                <img src="images/MANGO.png" alt="MANGO" class="menu-img">
+                <span>Mango - S/6.00</span>
+                <button onclick="addItem('table4', 'MANGO', 6.00)">Agregar</button>
+            </li>
+            <li>
+                <img src="images/COMBINADO.png" alt="COMBINADO" class="menu-img">
+                <span>Combinado - S/5.00</span>
+                <button onclick="addItem('table4', 'COMBINADO', 5.00)">Agregar</button>
+            </li>
+            <li>
+                <img src="images/CON LECHE.png" alt="CON LECHE" class="menu-img">
+                <span>Con Leche - S/6.00</span>
+                <button onclick="addItem('table4', 'CON LECHE', 6.00)">Agregar</button>
+            </li>
+            <!-- Agregar más jugos -->
+        </ul>
+    </div>
+    <div id="pedido-table4" class="pedido">
+        <h2>Pedido Actual</h2>
+        <ul id="pedido-list-table4"></ul>
+        <p>Total: S/<span id="total-table4">0.00</span></p>
+        <button onclick="clearOrder('table4')">Limpiar</button>
+    </div>
+</div>
+<!----------------------------------------------------------------------------------------------------->
+<div id="table5" class="table-content">
+    <div class="tabs">
+        <button class="tab-button active" onclick="openTab('menu', 'table5')">Menú</button>
+        <button class="tab-button" onclick="openTab('bebidas', 'table5')">Bebidas</button>
+        <button class="tab-button" onclick="openTab('jugos', 'table5')">Jugos</button>
+    </div>
+    <div id="menu" class="tab-content active">
+        <h2>Menú</h2>
+        <ul>
+            <li>
+                <img src="images/lomo saltado.jpg" alt="lomo saltado" class="menu-img">
+                <span>Lomo Saltado - S/8.00</span>
+                <button onclick="addItem('table5', 'lomo saltado', 8.00)">Agregar</button>
+            </li>
+            <li>
+                <img src="images/chaufa de pollo.png" alt="chaufa de pollo" class="menu-img">
+                <span>Chaufa de Pollo - S/8.00</span>
+                <button onclick="addItem('table5', 'chaufa de pollo', 8.00)">Agregar</button>
+            </li>
+            <li>
+                <img src="images/chicharron de pollo.png" alt="chicharron de pollo" class="menu-img">
+                <span>Chicharron de Pollo - S/10.00</span>
+                <button onclick="addItem('table5', 'chicharron de pollo', 10.00)">Agregar</button>
+            </li>
+            <li>
+                <img src="images/pollo broster.png" alt="pollo broster" class="menu-img">
+                <span>Pollo Broster - S/8.00</span>
+                <button onclick="addItem('table5', 'pollo broster', 8.00)">Agregar</button>
+            </li>
+            <li>
+                <img src="images/alitas broster.png" alt="alitas broster" class="menu-img">
+                <span>Alitas Broster - S/8.00</span>
+                <button onclick="addItem('table5', 'alitas broster', 8.00)">Agregar</button>
+            </li>
+            <li>
+                <img src="images/arroz a la cubana.png" alt="arroz a la cubana" class="menu-img">
+                <span>Arroz a la Cubana - S/7.00</span>
+                <button onclick="addItem('table5', 'arroz a la cubana', 7.00)">Agregar</button>
+            </li>
+            <li>
+                <img src="images/pollo a la plancha.png" alt="pollo a la plancha" class="menu-img">
+                <span>Pollo a la Plancha - S/12.00</span>
+                <button onclick="addItem('table5', 'pollo a la plancha', 12.00)">Agregar</button>
+            </li>
+            <li>
+                <img src="images/salchipapa.png" alt="salchipapa" class="menu-img">
+                <span>Salchipapa - S/5.00</span>
+                <button onclick="addItem('table5', 'salchipapa', 5.00)">Agregar</button>
+            </li>
+            <li>
+                <img src="images/lomo montado.png" alt="lomo montado" class="menu-img">
+                <span>Lomo Montado - S/12.00</span>
+                <button onclick="addItem('table5', 'lomo montado', 12.00)">Agregar</button>
+            </li>
+            <li>
+                <img src="images/tallarin saltado.png" alt="tallarin saltado" class="menu-img">
+                <span>Tallarin Saltado - S/12.00</span>
+                <button onclick="addItem('table5', 'tallarin saltado', 12.00)">Agregar</button>
+            </li>
+        </ul>
+    </div>
+    <div id="bebidas" class="tab-content">
+        <h2>Bebidas</h2>
+        <ul>
+            <li>
+                <img src="images/Gordita.jpg" alt="Gordita" class="menu-img">
+                <span>Gordita - S/5.00</span>
+                <button onclick="addItem('table5', 'Gordita', 5.00)">Agregar</button>
+            </li>
+            <li>
+                <img src="images/Coca Cola.png" alt="Coca Cola" class="menu-img">
+                <span>Coca Cola - S/3.00</span>
+                <button onclick="addItem('table5', 'Coca Cola', 3.00)">Agregar</button>
+            </li>
+            <li>
+                <img src="images/Inca Kola.png" alt="Inca Kola" class="menu-img">
+                <span>Inca Kola - S/3.00</span>
+                <button onclick="addItem('table5', 'Inca Kola', 3.00)">Agregar</button>
+            </li>
+            <li>
+                <img src="images/San Luis.png" alt="San Luis" class="menu-img">
+                <span>San Luis - S/3.00</span>
+                <button onclick="addItem('table5', 'San Luis', 3.00)">Agregar</button>
+            </li>
+            <!-- Agregar más bebidas -->
+        </ul>
+    </div>
+    <div id="jugos" class="tab-content">
+        <h2>Jugos</h2>
+        <ul>
+            <li>
+                <img src="images/FRESA.png" alt="FRESA" class="menu-img">
+                <span>Fresa - S/4.00</span>
+                <button onclick="addItem('table5', 'FRESA', 4.00)">Agregar</button>
+            </li>
+            <li>
+                <img src="images/NARANJA.png" alt="NARANJA" class="menu-img">
+                <span>Naranja - S/4.00</span>
+                <button onclick="addItem('table5', 'NARANJA', 4.00)">Agregar</button>
+            </li>
+            <li>
+                <img src="images/PIÑA.png" alt="PIÑA" class="menu-img">
+                <span>Piña - S/4.00</span>
+                <button onclick="addItem('table5', 'PIÑA', 4.00)">Agregar</button>
+            </li>
+            <li>
+                <img src="images/PAPAYA.png" alt="PAPAYA" class="menu-img">
+                <span>Papaya - S/4.00</span>
+                <button onclick="addItem('table5', 'PAPAYA', 4.00)">Agregar</button>
+            </li>
+            <li>
+                <img src="images/PLATANO.png" alt="PLATANO" class="menu-img">
+                <span>Platano - S/4.00</span>
+                <button onclick="addItem('table5', 'PLATANO', 4.00)">Agregar</button>
+            </li>
+            <li>
+                <img src="images/SURTIDO 2.png" alt="SURTIDO 2" class="menu-img">
+                <span>Surtido - S/6.00</span>
+                <button onclick="addItem('tabl5', 'SURTIDO 2', 6.00)">Agregar</button>
+            </li>
+            <li>
+                <img src="images/LUCUMA.png" alt="LUCUMA" class="menu-img">
+                <span>Lucuma - S/6.00</span>
+                <button onclick="addItem('table5', 'LUCUMA', 6.00)">Agregar</button>
+            </li>
+            <li>
+                <img src="images/MANGO.png" alt="MANGO" class="menu-img">
+                <span>Mango - S/6.00</span>
+                <button onclick="addItem('table5', 'MANGO', 6.00)">Agregar</button>
+            </li>
+            <li>
+                <img src="images/COMBINADO.png" alt="COMBINADO" class="menu-img">
+                <span>Combinado - S/5.00</span>
+                <button onclick="addItem('table5', 'COMBINADO', 5.00)">Agregar</button>
+            </li>
+            <li>
+                <img src="images/CON LECHE.png" alt="CON LECHE" class="menu-img">
+                <span>Con Leche - S/6.00</span>
+                <button onclick="addItem('table5', 'CON LECHE', 6.00)">Agregar</button>
+            </li>
+            <!-- Agregar más jugos -->
+        </ul>
+    </div>
+    <div id="pedido-table5" class="pedido">
+        <h2>Pedido Actual</h2>
+        <ul id="pedido-list-table5"></ul>
+        <p>Total: S/<span id="total-table5">0.00</span></p>
+        <button onclick="clearOrder('table5')">Limpiar</button>
+    </div>
+</div>
+<!----------------------------------------------------------------------------------------------------->
+<div id="table6" class="table-content">
+    <div class="tabs">
+        <button class="tab-button active" onclick="openTab('menu', 'table6')">Menú</button>
+        <button class="tab-button" onclick="openTab('bebidas', 'table6')">Bebidas</button>
+        <button class="tab-button" onclick="openTab('jugos', 'table6')">Jugos</button>
+    </div>
+    <div id="menu" class="tab-content active">
+        <h2>Menú</h2>
+        <ul>
+            <li>
+                <img src="images/lomo saltado.jpg" alt="lomo saltado" class="menu-img">
+                <span>Lomo Saltado - S/8.00</span>
+                <button onclick="addItem('table6', 'lomo saltado', 8.00)">Agregar</button>
+            </li>
+            <li>
+                <img src="images/chaufa de pollo.png" alt="chaufa de pollo" class="menu-img">
+                <span>Chaufa de Pollo - S/8.00</span>
+                <button onclick="addItem('table6', 'chaufa de pollo', 8.00)">Agregar</button>
+            </li>
+            <li>
+                <img src="images/chicharron de pollo.png" alt="chicharron de pollo" class="menu-img">
+                <span>Chicharron de Pollo - S/10.00</span>
+                <button onclick="addItem('table6', 'chicharron de pollo', 10.00)">Agregar</button>
+            </li>
+            <li>
+                <img src="images/pollo broster.png" alt="pollo broster" class="menu-img">
+                <span>Pollo Broster - S/8.00</span>
+                <button onclick="addItem('table6', 'pollo broster', 8.00)">Agregar</button>
+            </li>
+            <li>
+                <img src="images/alitas broster.png" alt="alitas broster" class="menu-img">
+                <span>Alitas Broster - S/8.00</span>
+                <button onclick="addItem('table6', 'alitas broster', 8.00)">Agregar</button>
+            </li>
+            <li>
+                <img src="images/arroz a la cubana.png" alt="arroz a la cubana" class="menu-img">
+                <span>Arroz a la Cubana - S/7.00</span>
+                <button onclick="addItem('table6', 'arroz a la cubana', 7.00)">Agregar</button>
+            </li>
+            <li>
+                <img src="images/pollo a la plancha.png" alt="pollo a la plancha" class="menu-img">
+                <span>Pollo a la Plancha - S/12.00</span>
+                <button onclick="addItem('table6', 'pollo a la plancha', 12.00)">Agregar</button>
+            </li>
+            <li>
+                <img src="images/salchipapa.png" alt="salchipapa" class="menu-img">
+                <span>Salchipapa - S/5.00</span>
+                <button onclick="addItem('table6', 'salchipapa', 5.00)">Agregar</button>
+            </li>
+            <li>
+                <img src="images/lomo montado.png" alt="lomo montado" class="menu-img">
+                <span>Lomo Montado - S/12.00</span>
+                <button onclick="addItem('table6', 'lomo montado', 12.00)">Agregar</button>
+            </li>
+            <li>
+                <img src="images/tallarin saltado.png" alt="tallarin saltado" class="menu-img">
+                <span>Tallarin Saltado - S/12.00</span>
+                <button onclick="addItem('table6', 'tallarin saltado', 12.00)">Agregar</button>
+            </li>
+        </ul>
+    </div>
+    <div id="bebidas" class="tab-content">
+        <h2>Bebidas</h2>
+        <ul>
+            <li>
+                <img src="images/Gordita.jpg" alt="Gordita" class="menu-img">
+                <span>Gordita - S/5.00</span>
+                <button onclick="addItem('table6', 'Gordita', 5.00)">Agregar</button>
+            </li>
+            <li>
+                <img src="images/Coca Cola.png" alt="Coca Cola" class="menu-img">
+                <span>Coca Cola - S/3.00</span>
+                <button onclick="addItem('table6', 'Coca Cola', 3.00)">Agregar</button>
+            </li>
+            <li>
+                <img src="images/Inca Kola.png" alt="Inca Kola" class="menu-img">
+                <span>Inca Kola - S/3.00</span>
+                <button onclick="addItem('table6', 'Inca Kola', 3.00)">Agregar</button>
+            </li>
+            <li>
+                <img src="images/San Luis.png" alt="San Luis" class="menu-img">
+                <span>San Luis - S/3.00</span>
+                <button onclick="addItem('table6', 'San Luis', 3.00)">Agregar</button>
+            </li>
+            <!-- Agregar más bebidas -->
+        </ul>
+    </div>
+    <div id="jugos" class="tab-content">
+        <h2>Jugos</h2>
+        <ul>
+            <li>
+                <img src="images/FRESA.png" alt="FRESA" class="menu-img">
+                <span>Fresa - S/4.00</span>
+                <button onclick="addItem('table6', 'FRESA', 4.00)">Agregar</button>
+            </li>
+            <li>
+                <img src="images/NARANJA.png" alt="NARANJA" class="menu-img">
+                <span>Naranja - S/4.00</span>
+                <button onclick="addItem('table6', 'NARANJA', 4.00)">Agregar</button>
+            </li>
+            <li>
+                <img src="images/PIÑA.png" alt="PIÑA" class="menu-img">
+                <span>Piña - S/4.00</span>
+                <button onclick="addItem('table6', 'PIÑA', 4.00)">Agregar</button>
+            </li>
+            <li>
+                <img src="images/PAPAYA.png" alt="PAPAYA" class="menu-img">
+                <span>Papaya - S/4.00</span>
+                <button onclick="addItem('table6', 'PAPAYA', 4.00)">Agregar</button>
+            </li>
+            <li>
+                <img src="images/PLATANO.png" alt="PLATANO" class="menu-img">
+                <span>Platano - S/4.00</span>
+                <button onclick="addItem('table6', 'PLATANO', 4.00)">Agregar</button>
+            </li>
+            <li>
+                <img src="images/SURTIDO 2.png" alt="SURTIDO 2" class="menu-img">
+                <span>Surtido - S/6.00</span>
+                <button onclick="addItem('table6', 'SURTIDO 2', 6.00)">Agregar</button>
+            </li>
+            <li>
+                <img src="images/LUCUMA.png" alt="LUCUMA" class="menu-img">
+                <span>Lucuma - S/6.00</span>
+                <button onclick="addItem('table6', 'LUCUMA', 6.00)">Agregar</button>
+            </li>
+            <li>
+                <img src="images/MANGO.png" alt="MANGO" class="menu-img">
+                <span>Mango - S/6.00</span>
+                <button onclick="addItem('table6', 'MANGO', 6.00)">Agregar</button>
+            </li>
+            <li>
+                <img src="images/COMBINADO.png" alt="COMBINADO" class="menu-img">
+                <span>Combinado - S/5.00</span>
+                <button onclick="addItem('table6', 'COMBINADO', 5.00)">Agregar</button>
+            </li>
+            <li>
+                <img src="images/CON LECHE.png" alt="CON LECHE" class="menu-img">
+                <span>Con Leche - S/6.00</span>
+                <button onclick="addItem('table6', 'CON LECHE', 6.00)">Agregar</button>
+            </li>
+            <!-- Agregar más jugos -->
+        </ul>
+    </div>
+    <div id="pedido-table6" class="pedido">
+        <h2>Pedido Actual</h2>
+        <ul id="pedido-list-table6"></ul>
+        <p>Total: S/<span id="total-table6">0.00</span></p>
+        <button onclick="clearOrder('table6')">Limpiar</button>
+    </div>
+</div>
+<!----------------------------------------------------------------------------------------------------->
+
+        <!-- Repetir para table3, table4, table5, table6 -->
+    </dibv>
     <script src="script.js"></script>
 </body>
 </html>
