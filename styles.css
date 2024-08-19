@@ -36,7 +36,7 @@ body {
 
 h1, h2 {
     text-align: center;
-    color: #333;
+    color: #ffffff;
 }
 
 #menu, #pedido {
@@ -75,4 +75,10 @@ button {
 
 button:hover {
     background-color: #218838;
+}
+
+#pedido p {
+    text-align: center; /* Centrar el texto del total */
+    font-size: 2em; /* Hacer la letra más grande */
+    font-weight: bold; /* Hacer el texto en negrita */
 }
