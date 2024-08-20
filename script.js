@@ -85,5 +85,19 @@ function openTable(tableId) {
     });
 }
 
+const firebaseConfig = {
+    apiKey: "AIzaSyAw5BAsmfQAqHO0HGksTHlFb4UdJGfLNOg",
+    authDomain: "restaurante-breslyn.firebaseapp.com",
+    projectId: "restaurante-breslyn",
+    storageBucket: "restaurante-breslyn.appspot.com",
+    messagingSenderId: "144567784782",
+    appId: "1:144567784782:web:06aaac32a71877f96d3a1f",
+    measurementId: "G-CJXH38E1F3"
+  };
+  
+  // Initialize Firebase
+  const app = initializeApp(firebaseConfig);
+  const analytics = getAnalytics(app);
+  
 // Inicializar la primera mesa como activa
 document.addEventListener('DOMContentLoaded', () => openTable('table1'));
